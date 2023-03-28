@@ -2,33 +2,28 @@
 class Pays
 {
     private string $_nomPays;
-    private Equipe $_equipe;
+    private array $_equipes;
 
-    private function __construct(string $nomPays, Equipe $equipe)
+    public function __construct(string $nomPays)
     {
         $this->_nomPays = $nomPays;
-        $this->_equipe = $equipe;
     }
-
 	public function get_nomPays(): string
     {
 		return $this->_nomPays;
 	}
-
 	public function set_nomPays(string $_nomPays): self 
     {
 		$this->_nomPays = $_nomPays;
 		return $this;
 	}
-
-	public function get_equipe(): Equipe 
+	public function get_equipes(): array 
     {
-		return $this->_equipe;
+		return $this->_equipes;
 	}
-
-	public function set_equipe(Equipe $_equipe): self 
+	public function set_equipes(array $_equipes): self 
     {
-		$this->_equipe = $_equipe;
+		$this->_equipes = $_equipes;
 		return $this;
 	}
 }
