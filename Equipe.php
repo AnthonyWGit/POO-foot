@@ -3,15 +3,14 @@ class Equipe
 {
     private string $_nomEquipe;
     private string $_dateDeCreation;
-    private array $_joueurs = [];  //Une équipe a PLUSIEURS joueurs
-    private string $pays;
-
-    public function __construct(string $nomEquipe, string $dateCreation, array $joueurs, string $pays)
+    private array $_joueurs;  //Une équipe a PLUSIEURS joueurs
+    private string $_pays;
+    public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ string $pays)
     {
         $this->_nomEquipe = $nomEquipe;
         $this->_dateDeCreation = $dateCreation;
-        $this->_joueurs = $joueurs;
-        $this->pays = $pays;
+        $this->_joueurs = [];
+        $this->_pays = $pays;
     }
 	public function get_nomEquipe(): string 
     {
@@ -41,11 +40,14 @@ class Equipe
 		return $this;
 	}
 	public function getPays(): string {
-		return $this->pays;
+		return $this->_pays;
 	}
-
 	public function setPays(string $pays): self {
-		$this->pays = $pays;
+		$this->_pays = $pays;
 		return $this;
 	}
+    public function ajouterJoueur(Joueur $joueur)
+    {
+        $this->_joueurs[] = $joueur;
+    }
 }
