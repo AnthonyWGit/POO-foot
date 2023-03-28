@@ -4,8 +4,8 @@ class Equipe
     private string $_nomEquipe;
     private string $_dateDeCreation;
     private array $_joueurs;  //Une équipe a PLUSIEURS joueurs
-    private string $_pays;
-    public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ string $pays)
+    private Pays $_pays; //L'EQUIPE NE BOUGE PAS DE PAYS 
+    public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ Pays $pays)
     {
         $this->_nomEquipe = $nomEquipe;
         $this->_dateDeCreation = $dateCreation;
@@ -39,10 +39,10 @@ class Equipe
 		$this->_joueurs = $_joueurs;
 		return $this;
 	}
-	public function getPays(): string {
+	public function getPays(): Pays {
 		return $this->_pays;
 	}
-	public function setPays(string $pays): self {
+	public function setPays(Pays $pays): self {
 		$this->_pays = $pays;
 		return $this;
 	}
