@@ -50,9 +50,9 @@ class Joueur
 		$this->_equipes = $_equipes;
 		return $this;
 	}
-    public function getPays()
+    public function getNationalite()
     {
-        return $this->_pays;
+        return $this->_nationalite;
     }
     public function ajouterEquipes(Equipe $equipe)
     {
