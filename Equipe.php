@@ -11,6 +11,7 @@ class Equipe
         $this->_dateDeCreation = $dateCreation;
         $this->_joueurs = [];
         $this->_pays = $pays;
+        $this->_pays->ajouterEquipes($this);
     }
 	public function get_nomEquipe(): string 
     {

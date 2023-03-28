@@ -26,9 +26,17 @@ class Pays
 		$this->_equipes = $_equipes;
 		return $this;
 	}
+    public function ajouterEquipes(Equipe $equipe)
+    {
+        $this->_equipes[] = $equipe;
+    }
     public function afficherEquipes()
     {
-        $result = $this->_nomPays. "<br>";
+        $result = "Équipes de la ".$this->_nomPays. "<br>";
+        foreach ($this->_equipes as $equipe)
+        {
+            $result.=$equipe->get_nomEquipe(). "<br>";
+        }
         return $result;
     }
 }
