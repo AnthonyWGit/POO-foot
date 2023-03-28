@@ -50,4 +50,14 @@ class Equipe
     {
         $this->_joueurs[] = $joueur;
     }
+    
+    public function afficherJoueur()
+    {
+        $result = "Joueurs du ".$this->_nomEquipe. "<br>";
+        foreach ($this->_joueurs as $joueur)
+            {
+                $result.= $joueur->get_nomJoueur(). " ". $joueur->get_prenomJoueur(). " Nationalité : ". $joueur->getNationalite();
+            }
+        return $result;
+    }
 }
