@@ -5,14 +5,13 @@ class Joueur
     private string $_prenomJoueur;
     private string $_ddn;
     private array $_equipes = []; //Un joueur peut jouer dans plusieurs équipes ou UNE 
-    private Pays $_pays;
-
-    public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, Pays $pays)
+    private string $_nationalite;
+    public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, string $nationalite)
     {
         $this->_nomJoueur = $nomJoeur;
         $this->_prenomJoueur = $prenomJoueur;
         $this->_ddn = $ddn;
-        $this->_pays = $pays;
+        $this->_nationalite = $nationalite;
     }
 
 	public function get_nomJoueur(): string 
