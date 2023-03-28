@@ -26,4 +26,9 @@ class Pays
 		$this->_equipes = $_equipes;
 		return $this;
 	}
+    public function afficherEquipes()
+    {
+        $result = $this->_nomPays. "<br>";
+        return $result;
+    }
 }
