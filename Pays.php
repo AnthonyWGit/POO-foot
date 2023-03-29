@@ -32,7 +32,7 @@ class Pays
     }
     public function afficherEquipes()
     {
-        $result = "Équipes de la ".$this->_nomPays. "<br>";
+        $result = $this->_nomPays. "<br>";
         foreach ($this->_equipes as $equipe)
         {
             $result.=$equipe->get_nomEquipe(). "<br>";
