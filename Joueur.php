@@ -65,11 +65,11 @@ class Joueur
         $result = "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
         $aujourdhui = (date('d-m-Y'));
         $diff = date_diff(($this->_ddn), date_create($aujourdhui));
-        $result .= "Age : ". $diff->format("%Y") ."<br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc
+        $result .= "Age : ". $diff->format("%Y") ." - ". $this->_nationalite ." <br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc
 
         foreach ($this->_signatures as $signature)
         {
-            $result .= $signature->get_equipe()->get_nomEquipe(). " <br>";
+            $result .= $signature->get_equipe()->get_nomEquipe(). " (".$signature->get_creationSignature().") <br>";
         }
         return $result;
     }

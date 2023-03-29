@@ -22,10 +22,10 @@ $rcStbg = new Equipe("Racing Club Strasbourg", 1906, $france);
 $manchesterUnited = new Equipe("Manchester United", 1878, $angleterre);
 $juv = new Equipe("Juventus Turin", 1897, $italie);
 //Instacnier des JOUEURS
-$kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, "Française");
+$kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, "France");
 $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, "Argentine");
-$neymarjunior = new Joueur("Neymar", "Junior", $ddnNeymar, "Brésilienne");
-$cr7 = new Joueur("Cristiano","Ronaldo", $ddnCr7, "Portugaise");
+$neymarjunior = new Joueur("Neymar", "Junior", $ddnNeymar, "Brésil");
+$cr7 = new Joueur("Cristiano","Ronaldo", $ddnCr7, "Portugal");
 //Instancier des SIGNATURES
 $signatureMbappepsg = new Signature(2017,$psg, $kylianmbapon);
 $signatureMessiBarca = new Signature(2004,$fcBarca,$lionelMessi);
