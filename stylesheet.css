@@ -11,22 +11,33 @@
 {
     height : 50px;
     width : 50px;
+    justify-content: center;
+    align-items: center;
+}
+.drapeau
+{
+    width : 100%;
+    justify-content: center;
+    display: flex;
+
 }
 .carte
 {
+    background-image: url('Images/bois.jpg');
 
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
     height: 20vh;
     width: 20vh;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-
     flex-direction: row;
-    border: solid 4px;
+    border: solid 2px;
 }
 .carte h3
 {
-
+ width: 100%;
+ text-align: center;
 }
 .wrapper
 {
@@ -38,4 +49,6 @@
 h2
 {
     text-align: center;
+    margin: 1% 30%
+
 }
