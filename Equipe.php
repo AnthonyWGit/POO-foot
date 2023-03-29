@@ -49,9 +49,10 @@ class Equipe
         $this->_signatures[] = $signature;
     }
 
-    public function afficherJoueur()
+    public function afficherJoueurs()
     {
         $result = "Joueurs du ".$this->_nomEquipe. "<br>";
+        $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br>";
         foreach ($this->_signatures as $signature)
             {
                 $result.= $signature->get_joueur()->get_nomJoueur(). " ";
