@@ -39,7 +39,11 @@ class Pays
     }
     public function afficherEquipes()
     {
-        $result = $this->_nomPays. "<br>";
+        ?>
+        <h2>Voici une liste des équipes de football par pays</h2>
+        <h3> <?= $this->_nomPays ?> </h3>
+        <?php
+        $result = "";
         foreach ($this->_equipes as $equipe)
         {
             $result.=$equipe->get_nomEquipe(). "<br>";
