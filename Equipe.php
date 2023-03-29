@@ -53,13 +53,18 @@ class Equipe
     {
         $this->_joueurs[] = $joueur;
     }
-    
+    public function ajouterSignature(Signature $signature)
+    {
+        $this->_signatures[] = $signature;
+    }
     public function afficherJoueur()
     {
         $result = "Joueurs du ".$this->_nomEquipe. "<br>";
-        foreach ($this->_joueurs as $joueur)
+        foreach ($this->_signatures as $signature)
             {
-                $result.= $joueur->get_nomJoueur(). " ". $joueur->get_prenomJoueur(). " Nationalité : ". $joueur->getNationalite();
+                $result.= $signature->get_joueur()->get_nomJoueur(). " ";
+                $result.= $signature->get_joueur()->get_prenomJoueur()." ";
+                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
             }
         return $result;
     }
