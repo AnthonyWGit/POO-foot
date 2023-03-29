@@ -13,7 +13,6 @@ class Equipe
         $this->_joueurs = [];
         $this->_pays = $pays;
         $this->_pays->ajouterEquipes($this);
-
     }
 	public function get_nomEquipe(): string 
     {
@@ -64,7 +63,8 @@ class Equipe
             {
                 $result.= $signature->get_joueur()->get_nomJoueur(). " ";
                 $result.= $signature->get_joueur()->get_prenomJoueur()." ";
-                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
+                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." ";
+                $result.= "Date de signature : ".$signature->get_dateSignature(). "<br>";
             }
         return $result;
     }
