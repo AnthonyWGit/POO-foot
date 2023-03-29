@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet/stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>    
     <title>Document</title>
 </head>
@@ -14,9 +14,10 @@
 <?php
 spl_autoload_register(function ($class) {
     include $class . '.php';
-});
+}); 
 $result ="";
 //Instancier les PAYS
+echo $result .="<h2>Voici une liste des équipes de football par pays</h2>";
 $france = new Pays("France");
 $allemagne = new Pays("Allemagne");
 $angleterre = new Pays("Angleterre");

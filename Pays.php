@@ -40,7 +40,6 @@ class Pays
     public function afficherEquipes()
     {
         ?>
-        <h2>Voici une liste des équipes de football par pays</h2>
         <h3> <?= $this->_nomPays ?> </h3>
         <?php
         $result = "";
