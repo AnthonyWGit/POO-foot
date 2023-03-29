@@ -8,6 +8,7 @@ class Pays
     public function __construct(string $nomPays)
     {
         $this->_nomPays = $nomPays;
+        $this->_equipes = [];
     }
     //__________________________________________________SETTERS__________________
 
