@@ -4,11 +4,11 @@ class Joueur
     //Propriétés
     private string $_nomJoueur;
     private string $_prenomJoueur;
-    private string $_ddn;
+    private DateTime $_ddn;
     private array $_signatures = []; //On retrouvera les equipes dont les joueurs font parti avec les signatures
     private string $_nationalite;
     //Intialisation
-    public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, string $nationalite)
+    public function __construct(string $nomJoeur, string $prenomJoueur, DateTime $ddn, string $nationalite)
     {
         $this->_nomJoueur = $nomJoeur;
         $this->_prenomJoueur = $prenomJoueur;
@@ -27,7 +27,7 @@ class Joueur
 		$this->_prenomJoueur = $prenomJoueur;
 		return $this;
 	}
-    	public function set_ddn(string $ddn): self 
+    	public function set_ddn(DateTime $ddn): self 
     {
 		$this->_ddn = $ddn;
 		return $this;
@@ -46,7 +46,7 @@ class Joueur
 		return $this->_prenomJoueur;
 	}
 
-	public function get_ddn(): string 
+	public function get_ddn(): DateTime
     {
 		return $this->_ddn;
 	}
@@ -63,9 +63,8 @@ class Joueur
     public function afficherSignatures()
     {
         $result = "Le joueur ".$this->_nomJoueur. " ". $this->_prenomJoueur." a joué dans les équipes suivantes : <br>";
-        $anniversaire = new DateTime($this->_ddn);
         $aujourdhui = new DateTime(date('d-m-y'));
-        $diff = $aujourdhui->diff($anniversaire);
+        $diff = $aujourdhui->diff($this->_ddn);
         $result .="Age : ". $diff->format('%y'). " <br>";
         foreach ($this->_signatures as $signature)
         {
