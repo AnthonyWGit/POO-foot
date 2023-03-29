@@ -54,10 +54,10 @@ class Joueur
     public function afficherSignatures()
     {
         $result = "Le joueur ".$this->_nomJoueur. " ". $this->_prenomJoueur." a joué dans les équipes suivantes : <br>";
-        $anniversaire = new DateTime('$this->_ddn');
+        $anniversaire = new DateTime($this->_ddn);
         $aujourdhui = new DateTime(date('d-m-y'));
         $diff = $aujourdhui->diff($anniversaire);
-        $result .="Age : ". $diff->format('%y');
+        $result .="Age : ". $diff->format('%y'). " <br>";
         foreach ($this->_signatures as $signature)
         {
             $result .= $signature->get_equipe()->get_nomEquipe(). " <br>";
