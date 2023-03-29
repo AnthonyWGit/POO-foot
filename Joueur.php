@@ -5,6 +5,7 @@ class Joueur
     private string $_prenomJoueur;
     private string $_ddn;
     private array $_equipes = []; //Un joueur peut jouer dans plusieurs équipes ou UNE 
+    private array $_signatures = [];
     private string $_nationalite;
     public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, string $nationalite)
     {
@@ -60,11 +61,15 @@ class Joueur
     }
     public function ajouterSignature(Signature $signature)
     {
-
+        $this->_signatures[] = $signature;
     }
     public function afficherSignatures()
     {
         $result = "Le joueur ".$this->_nomJoueur. " ". $this->_prenomJoueur." a joué dans les équipes suivantes : <br>";
+        foreach ($this->_signatures as $signature)
+        {
+            $result .= $signature->get_equipe()->get_nomEquipe(). " <br>";
+        }
         return $result;
     }
     public function __toString() : string
