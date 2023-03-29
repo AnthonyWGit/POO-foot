@@ -40,10 +40,10 @@ class Pays
     public function afficherEquipes()
     {
         ?>
-        <h3> 
+        <h3><div class = "carte">
             <?php
-            $result = $this->_nomPays; 
-                if ($this->get_nomPays() == "France")
+            $result = $this->_nomPays. "</h3>" ; 
+                if ($this->_nomPays == "France")
                 {
                     $result .='
                 <div class = "drapeau">
@@ -54,7 +54,7 @@ class Pays
                 else if ($this->_nomPays == "Espagne")
                 {
                     $result.='
-                <div class = "drapeau">
+                <div class = "drapeau"><div class = "carte">
                     <img    alt = "Drapeau Espagnol"
                             src = "Images/espagne.png"/>
                 </div>';                  
@@ -62,7 +62,7 @@ class Pays
                 else if ($this->_nomPays == "Angleterre")
                 {
                     $result.='
-                <div class = "drapeau">
+                <div class = "drapeau"><div class = "carte">
                     <img    alt = "Drapeau Anglais"
                             src = "Images/england.png"/>
                 </div>';
@@ -70,16 +70,19 @@ class Pays
                 else 
                 {
                     $result.='
-                <div class = "drapeau">
+                <div class = "drapeau"><div class = "carte">
                     <img    alt = "Drapeau Italien"
                             src = "Images/italy.png"/>
                 </div>';
                 }
-        $result.="</h3>";
 
         foreach ($this->_equipes as $equipe)
         {
             $result.=$equipe->get_nomEquipe(). "<br>";
+            if ($equipe == end($this->_equipes))
+            {
+                $result.="</div>";
+            }
         }
         return $result;
     }
