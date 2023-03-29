@@ -55,8 +55,8 @@ class Equipe
         $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br>";
         foreach ($this->_signatures as $signature)
             {
-                $result.= $signature->get_joueur()->get_nomJoueur(). " ";
-                $result.= $signature->get_joueur()->get_prenomJoueur()." ";
+                $result.= $signature->get_joueur()->get_prenomJoueur(). " ";
+                $result.= $signature->get_joueur()->get_nomJoueur()." ";
                 $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." ";
                 $result.= "Date de signature : ".$signature->get_creationSignature(). "<br>";
             }
