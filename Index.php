@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet/stylesheet.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>    
+    <title>Document</title>
+</head>
+    <body>
+        <div class="wrapper">
+
 <?php
 spl_autoload_register(function ($class) {
     include $class . '.php';
@@ -50,3 +63,7 @@ echo $kylianmbapon->afficherSignatures();
 echo $lionelMessi->afficherSignatures();
 echo $cr7->afficherSignatures();
 echo $neymarjunior->afficherSignatures();
+?>
+        </div>
+    </body>
+</html>
