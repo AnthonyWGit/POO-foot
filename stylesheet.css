@@ -12,3 +12,30 @@
     height : 50px;
     width : 50px;
 }
+.carte
+{
+
+    height: 20vh;
+    width: 20vh;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+    border: solid 4px;
+}
+.carte h3
+{
+
+}
+.wrapper
+{
+    display: flex;
+    background: rgba(92, 49, 219, 0.292);
+    gap: 10px;
+    flex-wrap: wrap;
+}
+h2
+{
+    text-align: center;
+}

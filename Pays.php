@@ -39,38 +39,37 @@ class Pays
     }
     public function afficherEquipes()
     {
-        ?>
-        <h3><div class = "carte">
-            <?php
-            $result = $this->_nomPays. "</h3>" ; 
                 if ($this->_nomPays == "France")
                 {
-                    $result .='
-                <div class = "drapeau">
+                    $result = '<div class = "carte"><h3>'. $this->_nomPays. '</h3>';
+                    $result .='<div class = "drapeau">
                     <img    alt = "Drapeau Français"
                             src = "Images/france.png"/>
                 </div>';                    
                 }
                 else if ($this->_nomPays == "Espagne")
                 {
+                    $result = '<div class = "carte"><h3>'. $this->_nomPays ."</h3>";
                     $result.='
-                <div class = "drapeau"><div class = "carte">
-                    <img    alt = "Drapeau Espagnol"
-                            src = "Images/espagne.png"/>
-                </div>';                  
+                    <div class = "drapeau">
+                        <img    alt = "Drapeau Espagnol"
+                                src = "Images/espagne.png"/>
+                    </div>';                  
                 }
                 else if ($this->_nomPays == "Angleterre")
                 {
+                    $result = "<div class = 'carte'><h3>". $this->_nomPays ."</h3>";
                     $result.='
-                <div class = "drapeau"><div class = "carte">
+                <div class = "drapeau">
                     <img    alt = "Drapeau Anglais"
                             src = "Images/england.png"/>
                 </div>';
                 }
                 else 
                 {
+                    $result = "<div class = 'carte'><h3>". $this->_nomPays ."</h3>";
                     $result.='
-                <div class = "drapeau"><div class = "carte">
+                <div class = "drapeau">
                     <img    alt = "Drapeau Italien"
                             src = "Images/italy.png"/>
                 </div>';
@@ -81,7 +80,7 @@ class Pays
             $result.=$equipe->get_nomEquipe(). "<br>";
             if ($equipe == end($this->_equipes))
             {
-                $result.="</div>";
+                $result.=" OK</div>";
             }
         }
         return $result;

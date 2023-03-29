@@ -13,14 +13,12 @@
 </head>
     <body>
         <div class="wrapper">
-
 <?php
 spl_autoload_register(function ($class) {
     include $class . '.php';
 }); 
 $result ="";
 //Instancier les PAYS
-echo $result .="<h2>Voici une liste des équipes de football par pays</h2>";
 $france = new Pays("France");
 $allemagne = new Pays("Allemagne");
 $angleterre = new Pays("Angleterre");
@@ -53,6 +51,7 @@ $signatureCr7Real = new Signature(2009,$realMadrid,$cr7);
 $signatureNeymarPSG = new Signature(2017, $psg,$neymarjunior);
 $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
 //AFFICHAGE Équipe par pays
+echo $result.= "<h2>Voici une liste des équipes de football par pays </h2>";
 echo $france->afficherEquipes();
 echo $espagne->afficherEquipes();
 echo $angleterre->afficherEquipes();
