@@ -3,14 +3,12 @@ class Equipe
 {
     private string $_nomEquipe;
     private string $_dateDeCreation;
-    private array $_joueurs = [];  //Une équipe a PLUSIEURS joueurs
     private Pays $_pays; //L'EQUIPE NE BOUGE PAS DE PAYS 
-    private array $_signatures = [];
+    private array $_signatures = []; // c'est via la Signature qu'on va retrouver les joueurs
     public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ Pays $pays)
     {
         $this->_nomEquipe = $nomEquipe;
         $this->_dateDeCreation = $dateCreation;
-        $this->_joueurs = [];
         $this->_pays = $pays;
         $this->_pays->ajouterEquipes($this);
     }
@@ -32,15 +30,6 @@ class Equipe
 		$this->_dateDeCreation = $_dateDeCreation;
 		return $this;
 	}
-	public function get_joueurs(): array 
-    {
-		return $this->_joueurs;
-	}
-	public function set_joueurs(array $_joueurs): self 
-    {
-		$this->_joueurs = $_joueurs;
-		return $this;
-	}
 	public function getPays(): Pays {
 		return $this->_pays;
 	}
@@ -48,10 +37,7 @@ class Equipe
 		$this->_pays = $pays;
 		return $this;
 	}
-    public function ajouterJoueur(Joueur $joueur)
-    {
-        $this->_joueurs[] = $joueur;
-    }
+
     public function ajouterSignature(Signature $signature)
     {
         $this->_signatures[] = $signature;
@@ -64,7 +50,7 @@ class Equipe
                 $result.= $signature->get_joueur()->get_nomJoueur(). " ";
                 $result.= $signature->get_joueur()->get_prenomJoueur()." ";
                 $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." ";
-                $result.= "Date de signature : ".$signature->get_dateSignature(). "<br>";
+                $result.= "Date de signature : ".$signature->get_creationSignature(). "<br>";
             }
         return $result;
     }

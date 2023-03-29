@@ -1,11 +1,11 @@
 <?php
 class Signature
 {
-    private string $_creationSignature; //C'est l'année où le joueur a commencé à jouer pour l'équipe X
+    private int $_creationSignature; //C'est l'année où le joueur a commencé à jouer pour l'équipe X
     private Equipe $_equipe; // Un joueur signe pour UNE équipe
     private Joueur $_joueur;  // un JOUEUR sign pour une équipe
 
-    public function __construct(string $creationSignature, Equipe $equipe, Joueur $joueur)
+    public function __construct(int $creationSignature, Equipe $equipe, Joueur $joueur)
     {
         $this->_creationSignature = $creationSignature;
         $this->_equipe = $equipe;
@@ -13,11 +13,11 @@ class Signature
         $this->_equipe->ajouterSignature($this);
         $this->_joueur->ajouterSignature($this);
     }
-	public function get_creationSignature(): string 
+	public function get_creationSignature(): int
     {
 		return $this->_creationSignature;
 	}
-	public function set_creationSignature(string $_creationSignature): self 
+	public function set_creationSignature(int $_creationSignature): self 
     {
 		$this->_creationSignature = $_creationSignature;
 		return $this;

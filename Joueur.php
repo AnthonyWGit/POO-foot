@@ -4,7 +4,6 @@ class Joueur
     private string $_nomJoueur;
     private string $_prenomJoueur;
     private string $_ddn;
-    private array $_equipes = []; //Un joueur peut jouer dans plusieurs équipes ou UNE 
     private array $_signatures = [];
     private string $_nationalite;
     public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, string $nationalite)
@@ -42,23 +41,12 @@ class Joueur
 		$this->_ddn = $_ddn;
 		return $this;
 	}
-	public function get_equipes(): array 
-    {
-		return $this->_equipes;
-	}
-	public function set_equipes(array $_equipes): self 
-    {
-		$this->_equipes = $_equipes;
-		return $this;
-	}
+
     public function getNationalite()
     {
         return $this->_nationalite;
     }
-    public function ajouterEquipes(Equipe $equipe)
-    {
-        $this->_equipes[] = $equipe;
-    }
+
     public function ajouterSignature(Signature $signature)
     {
         $this->_signatures[] = $signature;
@@ -66,6 +54,10 @@ class Joueur
     public function afficherSignatures()
     {
         $result = "Le joueur ".$this->_nomJoueur. " ". $this->_prenomJoueur." a joué dans les équipes suivantes : <br>";
+        $anniversaire = new DateTime('$this->_ddn');
+        $aujourdhui = new DateTime(date('d-m-y'));
+        $diff = $aujourdhui->diff($anniversaire);
+        $result .="Age : ". $diff->format('%y');
         foreach ($this->_signatures as $signature)
         {
             $result .= $signature->get_equipe()->get_nomEquipe(). " <br>";
