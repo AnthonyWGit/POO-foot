@@ -6,7 +6,8 @@
     box-sizing: border-box;
     font-family: "Cormorant Garamond", semi-bold 600;
 }
-.drapeauFR
+.drapeau img
 {
-    width : 100%;
+    height : 50px;
+    width : 50px;
 }
