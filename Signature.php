@@ -10,6 +10,7 @@ class Signature
         $this->_dateSignature = $dateSignature;
         $this->_equipe = $equipe;
         $this->_joueur = $joueur;
+        $this->_equipe->ajouterSignature($this);
     }
 	public function get_dateSignature(): string 
     {
