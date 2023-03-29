@@ -1,25 +1,25 @@
 <?php
 class Signature
 {
-    private string $_dateSignature;
+    private string $_creationSignature; //C'est l'année où le joueur a commencé à jouer pour l'équipe X
     private Equipe $_equipe; // Un joueur signe pour UNE équipe
     private Joueur $_joueur;  // un JOUEUR sign pour une équipe
 
-    public function __construct(string $dateSignature, Equipe $equipe, Joueur $joueur)
+    public function __construct(string $creationSignature, Equipe $equipe, Joueur $joueur)
     {
-        $this->_dateSignature = $dateSignature;
+        $this->_creationSignature = $creationSignature;
         $this->_equipe = $equipe;
         $this->_joueur = $joueur;
         $this->_equipe->ajouterSignature($this);
         $this->_joueur->ajouterSignature($this);
     }
-	public function get_dateSignature(): string 
+	public function get_creationSignature(): string 
     {
-		return $this->_dateSignature;
+		return $this->_creationSignature;
 	}
-	public function set_dateSignature(string $_dateSignature): self 
+	public function set_creationSignature(string $_creationSignature): self 
     {
-		$this->_dateSignature = $_dateSignature;
+		$this->_creationSignature = $_creationSignature;
 		return $this;
 	}
 	public function get_equipe(): Equipe 
