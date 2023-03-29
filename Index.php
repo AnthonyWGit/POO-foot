@@ -22,4 +22,4 @@ echo $france->afficherEquipes();
 echo $espagne->afficherEquipes();
 //$PSG->ajouterJoueur($kylianmbapon);
 echo $PSG->afficherJoueur();
-
+echo $lionelMessi->afficherSignatures();
