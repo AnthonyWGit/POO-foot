@@ -41,7 +41,7 @@ class Pays
     {
                 if ($this->_nomPays == "France")
                 {
-                    $result = '<div class = "carte"><h3>'. $this->_nomPays. '</h3>';
+                    $result = '<div class = "carteEnsemble"><div class = "carte"><h3>'. $this->_nomPays. '</h3>';
                     $result .='<div class = "drapeau">
                     <img    alt = "Drapeau Français"
                             src = "Images/france.png"/>
@@ -81,6 +81,10 @@ class Pays
             if ($equipe == end($this->_equipes))
             {
                 $result.=" OK</div>";
+                if ($this->_nomPays == "Italie")
+                {
+                    $result.=" </div>";                    
+                }
             }
         }
         return $result;

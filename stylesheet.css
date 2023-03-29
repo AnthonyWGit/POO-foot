@@ -50,5 +50,12 @@ h2
 {
     text-align: center;
     margin: 1% 30%
-
+}
+.carteEnsemble
+{
+    display: flex;
+    padding : 0 10%;
+    width: 100%;
+    justify-content: center;
+    gap: 2%;
 }
