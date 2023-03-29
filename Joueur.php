@@ -58,7 +58,15 @@ class Joueur
     {
         $this->_equipes[] = $equipe;
     }
+    public function ajouterSignature(Signature $signature)
+    {
 
+    }
+    public function afficherSignatures()
+    {
+        $result = "Le joueur ".$this->_nomJoueur. " ". $this->_prenomJoueur." a joué dans les équipes suivantes : <br>";
+        return $result;
+    }
     public function __toString() : string
     {
         $result .= $this->_nomJoueur. " ".$this->_prenomJoueur." ". $this->_nationalite;
