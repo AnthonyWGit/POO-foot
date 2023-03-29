@@ -3,11 +3,11 @@ class Equipe
 {
     //Propriétés
     private string $_nomEquipe;
-    private string $_dateDeCreation;
+    private int $_dateDeCreation;
     private Pays $_pays; //L'EQUIPE NE BOUGE PAS DE PAYS 
     private array $_signatures = []; // c'est via la Signature qu'on va retrouver les joueurs
     //Initalisation
-    public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ Pays $pays)
+    public function __construct(string $nomEquipe, int $dateCreation,/*array $joueurs,*/ Pays $pays)
     {
         $this->_nomEquipe = $nomEquipe;
         $this->_dateDeCreation = $dateCreation;
@@ -20,7 +20,7 @@ class Equipe
 	    $this->_nomEquipe = $_nomEquipe;
 		return $this;
 	}
-	public function set_dateDeCreation(string $_dateDeCreation): self 
+	public function set_dateDeCreation(int $_dateDeCreation): self 
     {
 		$this->_dateDeCreation = $_dateDeCreation;
 		return $this;
@@ -34,7 +34,7 @@ class Equipe
     {
 		return $this->_nomEquipe;
 	}
-	public function get_dateDeCreation(): string 
+	public function get_dateDeCreation(): int
     {
 		return $this->_dateDeCreation;
 	}
