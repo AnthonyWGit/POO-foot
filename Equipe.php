@@ -1,10 +1,12 @@
 <?php 
 class Equipe
 {
+    //Propriétés
     private string $_nomEquipe;
     private string $_dateDeCreation;
     private Pays $_pays; //L'EQUIPE NE BOUGE PAS DE PAYS 
     private array $_signatures = []; // c'est via la Signature qu'on va retrouver les joueurs
+    //Initalisation
     public function __construct(string $nomEquipe, string $dateCreation,/*array $joueurs,*/ Pays $pays)
     {
         $this->_nomEquipe = $nomEquipe;
@@ -12,36 +14,41 @@ class Equipe
         $this->_pays = $pays;
         $this->_pays->ajouterEquipes($this);
     }
-	public function get_nomEquipe(): string 
-    {
-		return $this->_nomEquipe;
-	}
+    //___________________________S E T T E R S_________________________________
 	public function set_nomEquipe(string $_nomEquipe): self
     {
-		$this->_nomEquipe = $_nomEquipe;
+	    $this->_nomEquipe = $_nomEquipe;
 		return $this;
-	}
-	public function get_dateDeCreation(): string 
-    {
-		return $this->_dateDeCreation;
 	}
 	public function set_dateDeCreation(string $_dateDeCreation): self 
     {
 		$this->_dateDeCreation = $_dateDeCreation;
 		return $this;
-	}
-	public function getPays(): Pays {
-		return $this->_pays;
-	}
+	}    
 	public function setPays(Pays $pays): self {
 		$this->_pays = $pays;
 		return $this;
+	}    
+//____________________________GETTERS____________________________
+    public function get_nomEquipe(): string 
+    {
+		return $this->_nomEquipe;
+	}
+	public function get_dateDeCreation(): string 
+    {
+		return $this->_dateDeCreation;
 	}
 
+	public function getPays(): Pays 
+    {
+		return $this->_pays;
+	}
+    //______________________METHODES_____________________
     public function ajouterSignature(Signature $signature)
     {
         $this->_signatures[] = $signature;
     }
+
     public function afficherJoueur()
     {
         $result = "Joueurs du ".$this->_nomEquipe. "<br>";

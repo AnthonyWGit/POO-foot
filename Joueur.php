@@ -1,11 +1,13 @@
 <?php 
 class Joueur
 {
+    //Propriétés
     private string $_nomJoueur;
     private string $_prenomJoueur;
     private string $_ddn;
-    private array $_signatures = [];
+    private array $_signatures = []; //On retrouvera les equipes dont les joueurs font parti avec les signatures
     private string $_nationalite;
+    //Intialisation
     public function __construct(string $nomJoeur, string $prenomJoueur, string $ddn, string $nationalite)
     {
         $this->_nomJoueur = $nomJoeur;
@@ -13,40 +15,47 @@ class Joueur
         $this->_ddn = $ddn;
         $this->_nationalite = $nationalite;
     }
+//____________________________________SETTERS________________________________
 
+	public function set_nomJoueur(string $nomJoueur): self 
+    {
+		$this->_nomJoueur = $nomJoueur;
+		return $this;
+	}
+    	public function set_prenomJoueur(string $prenomJoueur): self 
+    {
+		$this->_prenomJoueur = $prenomJoueur;
+		return $this;
+	}
+    	public function set_ddn(string $ddn): self 
+    {
+		$this->_ddn = $ddn;
+		return $this;
+	}
+    public function set_nationalite(string $nationalite)
+    {   
+        $this->_nationalite = $nationalite;
+    }
+    //__________________________________GETTERS________________
 	public function get_nomJoueur(): string 
     {
 		return $this->_nomJoueur;
-	}
-	public function set_nomJoueur(string $_nomJoueur): self 
-    {
-		$this->_nomJoueur = $_nomJoueur;
-		return $this;
 	}
 	public function get_prenomJoueur(): string 
     {
 		return $this->_prenomJoueur;
 	}
-	public function set_prenomJoueur(string $_prenomJoueur): self 
-    {
-		$this->_prenomJoueur = $_prenomJoueur;
-		return $this;
-	}
+
 	public function get_ddn(): string 
     {
 		return $this->_ddn;
-	}
-	public function set_ddn(string $_ddn): self 
-    {
-		$this->_ddn = $_ddn;
-		return $this;
 	}
 
     public function getNationalite()
     {
         return $this->_nationalite;
     }
-
+//____________________________________METHODES_______________________________________
     public function ajouterSignature(Signature $signature)
     {
         $this->_signatures[] = $signature;
