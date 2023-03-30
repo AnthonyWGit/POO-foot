@@ -32,6 +32,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     border: inset 2px;
+    overflow: auto; /*Barre de défilement quand fenêtre est toute petite parce le texte sort de la flexbox*/
 }
 .carte:hover
 {
@@ -89,6 +90,12 @@ h2
  width: 100%;
 }
 
+.carteEquipe:hover
+{
+    opacity: 0.5;
+    transition: 2s;
+}
+
  .carteJoueur
 {
     background-image: url('../Images/6ccc.jpg');
@@ -128,7 +135,12 @@ h2
 }
 .carteJoueur a
 {
+
+}
+.carteJoueur img
+{
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 50vh;
+
+    max-width: 100%;
 }

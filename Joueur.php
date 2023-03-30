@@ -65,13 +65,13 @@ class Joueur
         if ($this->_nomJoueur == "Mbappé")
         {
             $imgjoueur = '<img  alt="Mbappé photo"
-                                src ="Images/mabbéportrait.jfif"/>';
+                                src ="Images/mabbéportrait.jpg"/>';
             $url = 'https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" target=_blank>';
         }
         if ($this->_nomJoueur == "Messi")
         {
             $imgjoueur = '<img  alt="Messi photo"
-                                src ="Images/messiportrait.jfif"/>';
+                                src ="Images/messiportrait.jpg"/>';
             $url = 'https://fr.wikipedia.org/wiki/Lionel_Messi" target=_blank>';
         }
         if ($this->_nomJoueur == "Junior")
@@ -88,11 +88,10 @@ class Joueur
         }
         
         $result = '<a href ="'.$url. $imgjoueur.'</a>';
-        $result .= "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
         $aujourdhui = (date('d-m-Y'));
         $diff = date_diff(($this->_ddn), date_create($aujourdhui));
-        $result .= "Age : ". $diff->format("%Y") ." - ". $this->_nationalite ." <br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc
-
+        $result .= "Age : ". $diff->format("%Y") ." ans  - ". $this->_nationalite ." <br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc        
+        $result .= "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
         foreach ($this->_signatures as $signature)
         {
             $result .= $signature->get_equipe()->get_nomEquipe(). " (".$signature->get_creationSignature().") <br>";
