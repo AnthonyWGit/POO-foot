@@ -52,12 +52,13 @@ $signatureNeymarPSG = new Signature(2017, $psg,$neymarjunior);
 $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
 //AFFICHAGE Équipe par pays ?>
 <h2>Voici une liste des équipes de football par pays </h2>
-<?php
-echo $france->afficherEquipes();
-echo $espagne->afficherEquipes();
-echo $angleterre->afficherEquipes();
-echo $italie->afficherEquipes();
-//Affichage des joueurs dans une équipe ?>
+<div class = "cartePaysEnsemble">
+<div class = "cartePays"><?=$france->afficherEquipes(); ?></div>
+<div class = "cartePays"><?=$espagne->afficherEquipes(); ?></div>
+<div class = "cartePays"><?=$angleterre->afficherEquipes();?></div>
+<div class = "cartePays"><?=$italie->afficherEquipes(); ?></div>
+</div>
+<? //Affichage des joueurs dans une équipe ?>
 <div class = "carteEnsembleEquipe">
 <div class = "carteEquipe"><?= $psg->afficherJoueurs(); ?></div>
 <div class = "carteEquipe"><?= $rcStbg->afficherJoueurs(); ?></div>

@@ -39,53 +39,44 @@ class Pays
     }
     public function afficherEquipes()
     {
-                if ($this->_nomPays == "France") //Tous ces if servent pour afficher le bon drapeau
-                {
-                    $result = '<div class = "carteEnsemble"><div class = "carte"><h3>'. $this->_nomPays. '</h3>';
-                    $result .='<div class = "drapeau">
-                    <img    alt = "Drapeau Français"
-                            src = "Images/france.png"/>
-                </div>';                    
-                }
-                else if ($this->_nomPays == "Espagne")
-                {
-                    $result = '<div class = "carte"><h3>'. $this->_nomPays ."</h3>";
-                    $result.='
-                    <div class = "drapeau">
+        if ($this->_nomPays == "France") //Tous ces if servent pour afficher le bon drapeau
+        {
+            $result = '<h3>'. $this->_nomPays. '</h3>';
+            $result .='<div class = "drapeau">
+                        <img    alt = "Drapeau Français"
+                                src = "Images/france.png"/>
+                        </div>';                    
+        }
+        else if ($this->_nomPays == "Espagne")
+        {
+            $result = '<h3>'. $this->_nomPays ."</h3>";
+            $result.= '<div class = "drapeau">
                         <img    alt = "Drapeau Espagnol"
                                 src = "Images/espagne.png"/>
-                    </div>';                  
+                        </div>';           
+                            
                 }
-                else if ($this->_nomPays == "Angleterre")
-                {
-                    $result = "<div class = 'carte'><h3>". $this->_nomPays ."</h3>";
-                    $result.='
-                <div class = "drapeau">
-                    <img    alt = "Drapeau Anglais"
-                            src = "Images/england.png"/>
-                </div>';
-                }
-                else 
-                {
-                    $result = "<div class = 'carte'><h3>". $this->_nomPays ."</h3>";
-                    $result.='
-                <div class = "drapeau">
-                    <img    alt = "Drapeau Italien"
-                            src = "Images/italy.png"/>
-                </div>';
+        else if ($this->_nomPays == "Angleterre")
+        {
+            $result = "<h3>". $this->_nomPays ."</h3>";
+            $result.=' <div class = "drapeau">
+                        <img    alt = "Drapeau Anglais"
+                                src = "Images/england.png"/>
+                        </div>';
+
+        }
+        else 
+        {
+            $result = "<h3>". $this->_nomPays ."</h3>";
+            $result.=' <div class = "drapeau">
+                        <img    alt = "Drapeau Italien"
+                                src = "Images/italy.png"/>
+                        </div>';
                 }
 
         foreach ($this->_equipes as $equipe)
         {
             $result.=$equipe->get_nomEquipe(). "<br>";
-            if ($equipe == end($this->_equipes))
-            {
-                $result.="</div>";                  //La div en plus pour fermer la div carte 
-                if ($this->_nomPays == "Italie")
-                {
-                    $result.=" </div>";             //La div en plus pour fermer la div EnsembleCartes       
-                }
-            }
         }
         return $result;
     }

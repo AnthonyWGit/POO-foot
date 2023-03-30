@@ -7,43 +7,6 @@
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-stretch: 80%;
 }
-.drapeau img
-{
-    height : 50px;
-    width : 50px;
-    justify-content: center;
-    align-items: center;
-}
-.drapeau
-{
-    width : 100%;
-    justify-content: center;
-    display: flex;  
-
-}
-.carte
-{
-    background-image: url('../Images/6ccc.jpg');
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
-    height: 30vh;
-    width: 30vh;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    border: inset 2px;
-    overflow: auto; /*Barre de défilement quand fenêtre est toute petite parce le texte sort de la flexbox*/
-}
-.carte:hover
-{
-    opacity: 0.5;
-    transition: 0.6s;
-}
-.carte h3
-{
- width: 100%;
- text-align: center;
-}
 .wrapper
 {
     display: flex;
@@ -56,7 +19,44 @@ h2
     text-align: center;
     margin: 1% 30%
 }
-.carteEnsemble
+.drapeau
+{
+    width : 100%;
+    justify-content: center;
+    display: flex;  
+
+}
+.drapeau img
+{
+    height : 50px;
+    width : 50px;
+    justify-content: center;
+    align-items: center;
+}
+.cartePays
+{
+    background-image: url('../Images/6ccc.jpg');
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+    height: 30vh;
+    width: 30vh;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: inset 2px;
+    overflow: auto; /*Barre de défilement quand fenêtre est toute petite parce le texte sort de la flexbox*/
+}
+.cartePays:hover
+{
+    opacity: 0.5;
+    transition: 0.6s;
+}
+.cartePays h3
+{
+ width: 100%;
+ text-align: center;
+}
+.cartePaysEnsemble
 {
     display: flex;
     padding : 0 3%;
@@ -95,20 +95,6 @@ h2
     opacity: 0.5;
     transition: 2s;
 }
-
- .carteJoueur
-{
-    background-image: url('../Images/6ccc.jpg');
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
-    height: auto;
-    width: auto;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    border: inset 2px;
-}
-
 .carteEquipe .descriptionEquipe
  {
     display: flex;
@@ -125,6 +111,20 @@ h2
     text-align: center;
     max-height: 20%;
  }
+ 
+.carteJoueur
+{
+    background-image: url('../Images/6ccc.jpg');
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+    height: auto;
+    width: auto;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: inset 2px;
+}
+
  .carteEnsembleJoueur
 {
     display: flex;
