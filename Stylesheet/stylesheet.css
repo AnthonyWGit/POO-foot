@@ -58,7 +58,7 @@ h2
     justify-content: center;
     gap: 1%;
 }
-.carteEnsembleJoueur
+.carteEnsembleEquipe
 {
     display: flex;
     padding : 0 3%;
@@ -67,7 +67,7 @@ h2
     justify-content: center;
     gap: 1%;
 }
-.carteJoueur
+.carteEquipe
 {
     background-image: url('../Images/6ccc.jpg');
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
@@ -79,11 +79,24 @@ h2
     flex-direction: row;
     border: solid 2px;
 }
-.carteJoueur h3
+.carteEquipe h3
 {
  width: 100%;
 }
-.carteJoueur .descriptionJoueur
+
+ .carteJoueur
+{
+    background-image: url('../Images/6ccc.jpg');
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+    height: auto;
+    width: auto;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: solid 2px;
+}
+.carteEquipe .descriptionEquipe
  {
     display: flex;
     justify-content: space-around;
@@ -92,10 +105,19 @@ h2
     align-items: center;
     width: 100%;
  }
- .carteJoueur .carteJoueurHeader
+ .carteEquipe .carteEquipeHeader
  {
     display: flex;
     flex-direction: column;
     text-align: center;
     max-height: 20%;
  }
+ .carteEnsembleJoueur
+{
+    display: flex;
+    padding : 0 3%;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 1%;
+}

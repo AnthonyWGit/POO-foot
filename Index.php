@@ -58,19 +58,20 @@ echo $espagne->afficherEquipes();
 echo $angleterre->afficherEquipes();
 echo $italie->afficherEquipes();
 //Affichage des joueurs dans une équipe ?>
-<div class = "carteEnsembleJoueur">
-<div class = "carteJoueur"><?= $psg->afficherJoueurs(); ?></div>
-<div class = "carteJoueur"><?= $rcStbg->afficherJoueurs(); ?></div>
-<div class = "carteJoueur"><?= $fcBarca->afficherJoueurs(); ?></div>
-<div class = "carteJoueur"><?= $juv->afficherJoueurs();?></div>
+<div class = "carteEnsembleEquipe">
+<div class = "carteEquipe"><?= $psg->afficherJoueurs(); ?></div>
+<div class = "carteEquipe"><?= $rcStbg->afficherJoueurs(); ?></div>
+<div class = "carteEquipe"><?= $fcBarca->afficherJoueurs(); ?></div>
+<div class = "carteEquipe"><?= $juv->afficherJoueurs();?></div>
 </div>
-<?php
-//Afficher dans quelles équipes un joueur a joué 
-echo $kylianmbapon->afficherSignatures();
-echo $lionelMessi->afficherSignatures();
-echo $cr7->afficherSignatures();
-echo $neymarjunior->afficherSignatures();
-?>
+<? // Afficher dans quelles équipes un joueur a joué  ?>
+<div class = "carteEnsembleJoueur"></div>
+<div class = "carteJoueur"><?= $kylianmbapon->afficherSignatures(); ?></div>
+<div class = "carteJoueur"><?= $lionelMessi->afficherSignatures(); ?></div>
+<div class = "carteJoueur"><?= $cr7->afficherSignatures(); ?></div>
+<div class = "carteJoueur"><?= $neymarjunior->afficherSignatures(); ?></div>
+</div>
+
         </div>
     </body>
 </html>

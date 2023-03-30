@@ -60,11 +60,11 @@ class Equipe
         $drapeauPR =    "<img alt = 'Drapeau portugais'
                          src = 'Images/le-portugal.png'/ >";
 
-        $result = '<div class = "carteJoueurHeader"><h3>Joueurs du '.$this->_nomEquipe. '</h3>';
+        $result = '<div class = "carteEquipeHeader"><h3>Joueurs du '.$this->_nomEquipe. '</h3>';
         $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br></div>";
         foreach ($this->_signatures as $signature)
             {
-                $result.='<div class = "descriptionJoueur">';
+                $result.='<div class = "descriptionEquipe">';
                 $result.= $signature->get_joueur()->get_prenomJoueur(). " ";
                 $result.= $signature->get_joueur()->get_nomJoueur()." <br>";
                 $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
