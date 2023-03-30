@@ -121,3 +121,7 @@ h2
     justify-content: center;
     gap: 1%;
 }
+.carteJoueur img
+{
+ width: 100%;
+}

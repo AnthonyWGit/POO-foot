@@ -62,7 +62,29 @@ class Joueur
     }
     public function afficherSignatures()
     {
-        $result = "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
+        if ($this->_nomJoueur == "Mbappé")
+        {
+            $imgjoueur = '<img  alt="Mbappé photo"
+                                src ="Images/mabbéportrait.jfif"/>';
+        }
+        if ($this->_nomJoueur == "Messi")
+        {
+            $imgjoueur = '<img  alt="Messi photo"
+                                src ="Images/messiportrait.jfif"/>';
+        }
+        if ($this->_nomJoueur == "Junior")
+        {
+            $imgjoueur = '<img  alt="Neymar photo"
+                                src ="Images/neymarportrait.jpg"/>';
+        }
+        if ($this->_nomJoueur == "Ronaldo")
+        {
+            $imgjoueur = '<img  alt="Ronaldo photo"
+                                src ="Images/cr7portrait.jpg"/>';
+        }
+        
+        $result = $imgjoueur;
+        $result .= "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
         $aujourdhui = (date('d-m-Y'));
         $diff = date_diff(($this->_ddn), date_create($aujourdhui));
         $result .= "Age : ". $diff->format("%Y") ." - ". $this->_nationalite ." <br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc

@@ -39,8 +39,8 @@ $juv = new Equipe("Juventus Turin", 1897, $italie);
 //Instacnier des JOUEURS
 $kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, "France");
 $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, "Argentine");
-$neymarjunior = new Joueur("Neymar", "Junior", $ddnNeymar, "Brésil");
-$cr7 = new Joueur("Cristiano","Ronaldo", $ddnCr7, "Portugal");
+$neymarjunior = new Joueur("Junior", "Neymar", $ddnNeymar, "Brésil");
+$cr7 = new Joueur("Ronaldo","Cristiano", $ddnCr7, "Portugal");
 //Instancier des SIGNATURES
 $signatureMbappepsg = new Signature(2017,$psg, $kylianmbapon);
 $signatureMessiBarca = new Signature(2004,$fcBarca,$lionelMessi);
@@ -65,7 +65,7 @@ echo $italie->afficherEquipes();
 <div class = "carteEquipe"><?= $juv->afficherJoueurs();?></div>
 </div>
 <? // Afficher dans quelles équipes un joueur a joué  ?>
-<div class = "carteEnsembleJoueur"></div>
+<div class = "carteEnsembleJoueur">
 <div class = "carteJoueur"><?= $kylianmbapon->afficherSignatures(); ?></div>
 <div class = "carteJoueur"><?= $lionelMessi->afficherSignatures(); ?></div>
 <div class = "carteJoueur"><?= $cr7->afficherSignatures(); ?></div>

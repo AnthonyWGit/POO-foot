@@ -77,11 +77,11 @@ class Equipe
                 {
                     $result .=$drapeauAR."</div>";
                 }
-                else if ($signature->get_joueur()->get_nomJoueur() == "Cristiano")
+                else if ($signature->get_joueur()->get_nomJoueur() == "Ronaldo")
                 {
                     $result .=$drapeauPR."</div>";
                 }
-                else if ($signature->get_joueur()->get_nomJoueur() == "Neymar")
+                else if ($signature->get_joueur()->get_nomJoueur() == "Junior")
                 {
                     $result .=$drapeauBR."</div>";
                 }
