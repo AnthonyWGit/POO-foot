@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="Stylesheet/stylesheet.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
@@ -50,8 +50,9 @@ $signatureCr7Manchester = new Signature(2021, $manchesterUnited, $cr7);
 $signatureCr7Real = new Signature(2009,$realMadrid,$cr7);
 $signatureNeymarPSG = new Signature(2017, $psg,$neymarjunior);
 $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
-//AFFICHAGE Équipe par pays
-echo $result.= "<h2>Voici une liste des équipes de football par pays </h2>";
+//AFFICHAGE Équipe par pays ?>
+<h2>Voici une liste des équipes de football par pays </h2>
+<?php
 echo $france->afficherEquipes();
 echo $espagne->afficherEquipes();
 echo $angleterre->afficherEquipes();

@@ -23,11 +23,10 @@
 }
 .carte
 {
-    background-image: url('Images/bois.jpg');
-
+    background-image: url('../Images/bois.jpg');
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
-    height: 20vh;
-    width: 20vh;
+    height: 30vh;
+    width: 30vh;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -54,7 +53,7 @@ h2
 .carteEnsemble
 {
     display: flex;
-    padding : 0 10%;
+    padding : 0 5%;
     width: 100%;
     justify-content: center;
     gap: 2%;
