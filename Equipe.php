@@ -51,14 +51,18 @@ class Equipe
 
     public function afficherJoueurs()
     {
-        $result = "Joueurs du ".$this->_nomEquipe. "<br>";
+        $result = "<h3>Joueurs du ".$this->_nomEquipe. "</h3>";
         $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br>";
         foreach ($this->_signatures as $signature)
             {
+                $result.='<div class = "descriptionJoueur">';
                 $result.= $signature->get_joueur()->get_prenomJoueur(). " ";
                 $result.= $signature->get_joueur()->get_nomJoueur()." ";
-                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." ";
+                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
+                $result.= "<img alt = 'Drapeau Français'
+                                src = 'Images/france.png'/ >";
                 $result.= "Date de signature : ".$signature->get_creationSignature(). "<br>";
+                $result.='</div>';
             }
         return $result;
     }
