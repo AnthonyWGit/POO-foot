@@ -80,7 +80,7 @@ class Pays
             $result.=$equipe->get_nomEquipe(). "<br>";
             if ($equipe == end($this->_equipes))
             {
-                $result.=" OK</div>";
+                $result.="</div>";
                 if ($this->_nomPays == "Italie")
                 {
                     $result.=" </div>";                    
