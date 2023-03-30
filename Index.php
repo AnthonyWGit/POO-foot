@@ -57,11 +57,14 @@ echo $france->afficherEquipes();
 echo $espagne->afficherEquipes();
 echo $angleterre->afficherEquipes();
 echo $italie->afficherEquipes();
-//Affichage des joueurs dans une équipe
-echo $psg->afficherJoueurs();
-echo $rcStbg->afficherJoueurs();
-echo $fcBarca->afficherJoueurs();
-echo $juv->afficherJoueurs();
+//Affichage des joueurs dans une équipe ?>
+<div class = "carteEnsembleJoueur">
+<div class = "carteJoueur"><?= $psg->afficherJoueurs(); ?></div>
+<div class = "carteJoueur"><?= $rcStbg->afficherJoueurs(); ?></div>
+<div class = "carteJoueur"><?= $fcBarca->afficherJoueurs(); ?></div>
+<div class = "carteJoueur"><?= $juv->afficherJoueurs();?></div>
+</div>
+<?php
 //Afficher dans quelles équipes un joueur a joué 
 echo $kylianmbapon->afficherSignatures();
 echo $lionelMessi->afficherSignatures();
