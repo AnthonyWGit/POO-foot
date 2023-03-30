@@ -39,7 +39,7 @@ class Pays
     }
     public function afficherEquipes()
     {
-                if ($this->_nomPays == "France")
+                if ($this->_nomPays == "France") //Tous ces if servent pour afficher le bon drapeau
                 {
                     $result = '<div class = "carteEnsemble"><div class = "carte"><h3>'. $this->_nomPays. '</h3>';
                     $result .='<div class = "drapeau">
@@ -80,10 +80,10 @@ class Pays
             $result.=$equipe->get_nomEquipe(). "<br>";
             if ($equipe == end($this->_equipes))
             {
-                $result.="</div>";
+                $result.="</div>";                  //La div en plus pour fermer la div carte 
                 if ($this->_nomPays == "Italie")
                 {
-                    $result.=" </div>";                    
+                    $result.=" </div>";             //La div en plus pour fermer la div EnsembleCartes       
                 }
             }
         }
