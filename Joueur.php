@@ -66,24 +66,28 @@ class Joueur
         {
             $imgjoueur = '<img  alt="Mbappé photo"
                                 src ="Images/mabbéportrait.jfif"/>';
+            $url = 'https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" target=_blank>';
         }
         if ($this->_nomJoueur == "Messi")
         {
             $imgjoueur = '<img  alt="Messi photo"
                                 src ="Images/messiportrait.jfif"/>';
+            $url = 'https://fr.wikipedia.org/wiki/Lionel_Messi" target=_blank>';
         }
         if ($this->_nomJoueur == "Junior")
         {
             $imgjoueur = '<img  alt="Neymar photo"
                                 src ="Images/neymarportrait.jpg"/>';
+            $url = 'https://en.wikipedia.org/wiki/Neymar" target=_blank>';
         }
         if ($this->_nomJoueur == "Ronaldo")
         {
             $imgjoueur = '<img  alt="Ronaldo photo"
                                 src ="Images/cr7portrait.jpg"/>';
+            $url = 'https://fr.wikipedia.org/wiki/Cristiano_Ronaldo" target=_blank>';
         }
         
-        $result = $imgjoueur;
+        $result = '<a href ="'.$url. $imgjoueur.'</a>';
         $result .= "Le joueur ".$this->_prenomJoueur. " ". $this->_nomJoueur." a joué dans les équipes suivantes : <br>";
         $aujourdhui = (date('d-m-Y'));
         $diff = date_diff(($this->_ddn), date_create($aujourdhui));
