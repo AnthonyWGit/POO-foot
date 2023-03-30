@@ -51,6 +51,15 @@ class Equipe
 
     public function afficherJoueurs()
     {
+        $drapeauFR =    "<img alt = 'Drapeau français'
+                        src = 'Images/france.png'/ >";
+        $drapeauBR =    "<img alt = 'Drapeau brésilien'
+                        src = 'Images/bresil.png'/ >";
+        $drapeauAR =    "<img alt = 'Drapeau argentin'
+                        src = 'Images/argentine.png'/ >";
+        $drapeauPR =    "<img alt = 'Drapeau portugais'
+                         src = 'Images/le-portugal.png'/ >";
+
         $result = '<div class = "carteJoueurHeader"><h3>Joueurs du '.$this->_nomEquipe. '</h3>';
         $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br></div>";
         foreach ($this->_signatures as $signature)
@@ -60,10 +69,23 @@ class Equipe
                 $result.= $signature->get_joueur()->get_nomJoueur()." <br>";
                 $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
                 $result.= "Date de signature : ".$signature->get_creationSignature();
-                $result.= "<img alt = 'Drapeau Français'
-                                src = 'Images/france.png'/ >";                
-                $result.='</div>';
-            }
+                if ($signature->get_joueur()->get_nomJoueur() == "Mbappé")
+                {
+                    $result .= $drapeauFR."</div>";
+                }
+                else if ($signature->get_joueur()->get_nomJoueur() == "Messi")
+                {
+                    $result .=$drapeauAR."</div>";
+                }
+                else if ($signature->get_joueur()->get_nomJoueur() == "Cristiano")
+                {
+                    $result .=$drapeauPR."</div>";
+                }
+                else if ($signature->get_joueur()->get_nomJoueur() == "Neymar")
+                {
+                    $result .=$drapeauBR."</div>";
+                }
+            } 
         return $result;
     }
 }
