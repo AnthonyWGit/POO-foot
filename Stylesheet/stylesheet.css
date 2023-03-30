@@ -53,19 +53,19 @@ h2
 .carteEnsemble
 {
     display: flex;
-    padding : 0 5%;
+    padding : 0 3%;
     width: 100%;
     justify-content: center;
-    gap: 2%;
+    gap: 1%;
 }
 .carteEnsembleJoueur
 {
     display: flex;
-    padding : 0 5%;
+    padding : 0 3%;
     width: 100%;
     height: auto;
     justify-content: center;
-    gap: 2%;
+    gap: 1%;
 }
 .carteJoueur
 {
@@ -82,12 +82,20 @@ h2
 .carteJoueur h3
 {
  width: 100%;
- text-align: center;
 }
 .carteJoueur .descriptionJoueur
  {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     justify-items: center;
     padding: 1.5%;
+    align-items: center;
+    width: 100%;
+ }
+ .carteJoueur .carteJoueurHeader
+ {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 20%;
  }
