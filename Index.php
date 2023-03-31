@@ -51,7 +51,7 @@ $signatureCr7Real = new Signature(2009,$realMadrid,$cr7);
 $signatureNeymarPSG = new Signature(2017, $psg,$neymarjunior);
 $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
 //AFFICHAGE Équipe par pays ?>
-<h2>Voici une liste des équipes de football par pays </h2>
+<div class = "Infos"><h2>Voici une liste des équipes de football par pays </h2></div>
 <div class = "cartePaysEnsemble">
 <div class = "cartePays"><?=$france->afficherEquipes(); ?></div>
 <div class = "cartePays"><?=$espagne->afficherEquipes(); ?></div>
@@ -59,6 +59,7 @@ $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
 <div class = "cartePays"><?=$italie->afficherEquipes(); ?></div>
 </div>
 <? //Affichage des joueurs dans une équipe ?>
+<div class = "Infos"><h2>Voici une liste des joueurs par équipe </h2></div>
 <div class = "carteEnsembleEquipe">
 <div class = "carteEquipe"><?= $psg->afficherJoueurs(); ?></div>
 <div class = "carteEquipe"><?= $rcStbg->afficherJoueurs(); ?></div>
@@ -66,6 +67,7 @@ $signatureNeymarBarca = new Signature(2013, $fcBarca,$neymarjunior);
 <div class = "carteEquipe"><?= $juv->afficherJoueurs();?></div>
 </div>
 <? // Afficher dans quelles équipes un joueur a joué  ?>
+<div class = "Infos"><h2>Voici une liste des équipes des joueurs </h2></div>
 <div class = "carteEnsembleJoueur">
 <div class = "carteJoueur"><?= $kylianmbapon->afficherSignatures(); ?></div>
 <div class = "carteJoueur"><?= $lionelMessi->afficherSignatures(); ?></div>
