@@ -52,40 +52,10 @@ class Pays
     }
     public function afficherEquipes()
     {
-        if ($this->_nomPays == "France")
-        {
             $result = '<h3>'. $this->_nomPays. '</h3>';
-            $result .='<div class = "drapeau">
-                        <img    alt = "Drapeau Français"
-                                src = "Images/france.png"/>
-                        </div>';                    
-        }
-        else if ($this->_nomPays == "Espagne")
-        {
-            $result = '<h3>'. $this->_nomPays ."</h3>";
-            $result.= '<div class = "drapeau">
-                        <img    alt = "Drapeau Espagnol"
-                                src = "Images/espagne.png"/>
-                        </div>';           
-                            
-                }
-        else if ($this->_nomPays == "Angleterre")
-        {
-            $result = "<h3>". $this->_nomPays ."</h3>";
-            $result.=' <div class = "drapeau">
-                        <img    alt = "Drapeau Anglais"
-                                src = "Images/england.png"/>
-                        </div>';
-        }
-        else 
-        {
-            $result = "<h3>". $this->_nomPays ."</h3>";
-            $result.=' <div class = "drapeau">
-                        <img    alt = "Drapeau Italien"
-                                src = "Images/italy.png"/>
-                        </div>';
-                }
-
+            $result .='<div class = "drapeau">';
+            $result .= $this->get_drapeauPays();
+            $result .='</div>';                    
         foreach ($this->_equipes as $equipe)
         {
             $result.=$equipe->get_nomEquipe(). "<br>";
