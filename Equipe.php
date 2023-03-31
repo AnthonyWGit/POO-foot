@@ -51,14 +51,9 @@ class Equipe
 
     public function afficherJoueurs()
     {
-        $drapeauFR =    "<img alt = 'Drapeau français'
-                        src = 'Images/france.png'/ >";
-        $drapeauBR =    "<img alt = 'Drapeau brésilien'
-                        src = 'Images/bresil.png'/ >";
-        $drapeauAR =    "<img alt = 'Drapeau argentin'
-                        src = 'Images/argentine.png'/ >";
-        $drapeauPR =    "<img alt = 'Drapeau portugais'
-                         src = 'Images/le-portugal.png'/ >";
+        $drapeau =    "<img alt = 'Drapeau' ".$this->getPays()."
+                        src = 'Images/". $this->_pays->get_drapeauPays() .'/ >';
+
 
         $result = '<div class = "carteEquipeHeader"><h3>Joueurs du '.$this->_nomEquipe. '</h3>';
         $result.= $this->_pays->get_nomPays() ." - " .$this->_dateDeCreation. "<br></div>";
@@ -67,25 +62,12 @@ class Equipe
                 $result.='<div class = "descriptionEquipe">';
                 $result.= $signature->get_joueur()->get_prenomJoueur(). " ";
                 $result.= $signature->get_joueur()->get_nomJoueur()." <br>";
-                $result.= "Nationalité : ". $signature->get_joueur()->getNationalite()." <br>";
+                $result.= "Nationalité : ". $signature->get_joueur()->get_nationalite()." <br>";
                 $result.= "Date de signature : ".$signature->get_creationSignature();
-                if ($signature->get_joueur()->get_nomJoueur() == "Mbappé")
-                {
-                    $result .= $drapeauFR."</div>";
-                }
-                else if ($signature->get_joueur()->get_nomJoueur() == "Messi")
-                {
-                    $result .=$drapeauAR."</div>";
-                }
-                else if ($signature->get_joueur()->get_nomJoueur() == "Ronaldo")
-                {
-                    $result .=$drapeauPR."</div>";
-                }
-                else if ($signature->get_joueur()->get_nomJoueur() == "Junior")
-                {
-                    $result .=$drapeauBR."</div>";
-                }
+                $result.=$signature->get_joueur()->get_nationalite()->get_drapeauPays();
+                $result.='</div>';
             } 
+
         return $result;
     }
 }

@@ -4,11 +4,13 @@ class Pays
     //Propriétés
     private string $_nomPays;
     private array $_equipes;
+    private string $_drapeauPays;
 //Initialisation
-    public function __construct(string $nomPays)
+    public function __construct(string $nomPays, string $drapeauPays)
     {
         $this->_nomPays = $nomPays;
         $this->_equipes = [];
+        $this->_drapeauPays = $drapeauPays;
     }
     //__________________________________________________SETTERS__________________
 
@@ -22,6 +24,11 @@ class Pays
 		$this->_equipes = $_equipes;
 		return $this;
 	}
+	public function set_drapeauPays(string $_drapeauPays): self 
+    {
+		$this->_drapeauPays = $_drapeauPays;
+		return $this;
+	}    
     //__________________________________GETTERS______________________
 	public function get_nomPays(): string
     {
@@ -32,6 +39,12 @@ class Pays
     {
 		return $this->_equipes;
 	}
+	public function get_drapeauPays(): string 
+    {
+        return "<img    alt = 'Drapeau ".$this->_nomPays."'
+                        src = 'Images/". $this->_drapeauPays ."'/ >";
+	}
+
     //______________________METHODES_____________________________
     public function ajouterEquipes(Equipe $equipe)
     {
@@ -39,7 +52,7 @@ class Pays
     }
     public function afficherEquipes()
     {
-        if ($this->_nomPays == "France") //Tous ces if servent pour afficher le bon drapeau
+        if ($this->_nomPays == "France")
         {
             $result = '<h3>'. $this->_nomPays. '</h3>';
             $result .='<div class = "drapeau">
@@ -63,7 +76,6 @@ class Pays
                         <img    alt = "Drapeau Anglais"
                                 src = "Images/england.png"/>
                         </div>';
-
         }
         else 
         {
@@ -80,4 +92,10 @@ class Pays
         }
         return $result;
     }
+    public function __toString()
+    {
+        $result = $this->_nomPays;
+        return $result;
+    }
+
 }

@@ -18,12 +18,19 @@
                 include $class . '.php';
             }); 
             $result ="";
+            $urlMbappe = 'https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" target=_blank>';
+            $urlMessi = 'https://fr.wikipedia.org/wiki/Lionel_Messi" target=_blank>';
+            $urlNeymar = 'https://en.wikipedia.org/wiki/Neymar" target=_blank>';
+            $urlCr7 = 'https://fr.wikipedia.org/wiki/Cristiano_Ronaldo" target=_blank>';
             //Instancier les PAYS
-            $france = new Pays("France");
-            $allemagne = new Pays("Allemagne");
-            $angleterre = new Pays("Angleterre");
-            $italie = new Pays("Italie");
-            $espagne = new Pays("Espagne");
+            $france = new Pays("France","france.png");
+            $allemagne = new Pays("Allemagne","allemagne.png");
+            $angleterre = new Pays("Angleterre","england.png");
+            $italie = new Pays("Italie","italy.png");
+            $espagne = new Pays("Espagne","espagne.png");
+            $argentine = new Pays("Argentine","argentine.png");
+            $bresil = new Pays("Brésil","bresil.png");
+            $portugal = new Pays("Portugal","le-portugal.png");
             //Instancier des Dates de naissances
             $ddnMbappe = new DateTime(("20-12-1998"));
             $ddnlionelmessi = new DateTime(("24-06-1987"));
@@ -37,10 +44,10 @@
             $manchesterUnited = new Equipe("Manchester United", 1878, $angleterre);
             $juv = new Equipe("Juventus Turin", 1897, $italie);
             //Instacnier des JOUEURS
-            $kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, "France");
-            $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, "Argentine");
-            $neymarjunior = new Joueur("Junior", "Neymar", $ddnNeymar, "Brésil");
-            $cr7 = new Joueur("Ronaldo","Cristiano", $ddnCr7, "Portugal");
+            $kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, $france,$urlMbappe);
+            $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, $argentine, $urlMessi);
+            $neymarjunior = new Joueur("Junior", "Neymar", $ddnNeymar, $bresil, $urlNeymar);
+            $cr7 = new Joueur("Ronaldo","Cristiano", $ddnCr7, $portugal, $urlCr7);
             //Instancier des SIGNATURES
             $signatureMbappepsg = new Signature(2017,$psg, $kylianmbapon);
             $signatureMessiBarca = new Signature(2004,$fcBarca,$lionelMessi);

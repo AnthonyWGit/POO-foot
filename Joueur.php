@@ -6,9 +6,9 @@ class Joueur
     private string $_prenomJoueur;
     private DateTime $_ddn;
     private array $_signatures = []; //On retrouvera les equipes dont les joueurs font parti avec les signatures
-    private string $_nationalite;
+    private Pays $_nationalite;
     //Intialisation
-    public function __construct(string $nomJoeur, string $prenomJoueur, DateTime $ddn, string $nationalite)
+    public function __construct(string $nomJoeur, string $prenomJoueur, DateTime $ddn, Pays $nationalite)
     {
         $this->_nomJoueur = $nomJoeur;
         $this->_prenomJoueur = $prenomJoueur;
@@ -32,10 +32,11 @@ class Joueur
 		$this->_ddn = $ddn;
 		return $this;
 	}
-    public function set_nationalite(string $nationalite)
+    public function set_nationalite(Pays $nationalite)
     {   
         $this->_nationalite = $nationalite;
     }
+
     //__________________________________GETTERS________________
 	public function get_nomJoueur(): string 
     {
@@ -51,7 +52,7 @@ class Joueur
 		return $this->_ddn;
 	}
 
-    public function getNationalite()
+    public function get_nationalite() : Pays
     {
         return $this->_nationalite;
     }
