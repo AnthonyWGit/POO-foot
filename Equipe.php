@@ -38,7 +38,6 @@ class Equipe
     {
 		return $this->_dateDeCreation;
 	}
-
 	public function getPays(): Pays 
     {
 		return $this->_pays;

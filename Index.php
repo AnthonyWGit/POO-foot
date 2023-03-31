@@ -18,10 +18,16 @@
                 include $class . '.php';
             }); 
             $result ="";
+            //Déclarer des variables pour URL wikipedia 
             $urlMbappe = 'https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" target=_blank>';
             $urlMessi = 'https://fr.wikipedia.org/wiki/Lionel_Messi" target=_blank>';
             $urlNeymar = 'https://en.wikipedia.org/wiki/Neymar" target=_blank>';
             $urlCr7 = 'https://fr.wikipedia.org/wiki/Cristiano_Ronaldo" target=_blank>';
+            //Déclarer des variables pour les PORTRAITS des joueurs
+            $portraitMbappe = 'Images/mabbéportrait.jpg';
+            $portraitMessi =  'Images/messiportrait.jpg';
+            $portraitNeymar = 'Images/neymarportrait.jpg';
+            $portraitCr7 = 'Images/cr7portrait.jpg';
             //Instancier les PAYS
             $france = new Pays("France","france.png");
             $allemagne = new Pays("Allemagne","allemagne.png");
@@ -44,10 +50,10 @@
             $manchesterUnited = new Equipe("Manchester United", 1878, $angleterre);
             $juv = new Equipe("Juventus Turin", 1897, $italie);
             //Instacnier des JOUEURS
-            $kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, $france,$urlMbappe);
-            $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, $argentine, $urlMessi);
-            $neymarjunior = new Joueur("Junior", "Neymar", $ddnNeymar, $bresil, $urlNeymar);
-            $cr7 = new Joueur("Ronaldo","Cristiano", $ddnCr7, $portugal, $urlCr7);
+            $kylianmbapon = new Joueur("Mbappé", "Kylian", $ddnMbappe, $france,$urlMbappe,$portraitMbappe);
+            $lionelMessi = new Joueur("Messi", "Lionel", $ddnlionelmessi, $argentine, $urlMessi,$portraitMessi);
+            $neymarjunior = new Joueur("Junior", "Neymar", $ddnNeymar, $bresil, $urlNeymar,$portraitNeymar);
+            $cr7 = new Joueur("Ronaldo","Cristiano", $ddnCr7, $portugal, $urlCr7,$portraitCr7);
             //Instancier des SIGNATURES
             $signatureMbappepsg = new Signature(2017,$psg, $kylianmbapon);
             $signatureMessiBarca = new Signature(2004,$fcBarca,$lionelMessi);

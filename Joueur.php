@@ -7,16 +7,19 @@ class Joueur
     private DateTime $_ddn;
     private array $_signatures = []; //On retrouvera les equipes dont les joueurs font parti avec les signatures
     private Pays $_nationalite;
+    private string $_url;
+    private string $_portrait;
     //Intialisation
-    public function __construct(string $nomJoeur, string $prenomJoueur, DateTime $ddn, Pays $nationalite)
+    public function __construct(string $nomJoeur, string $prenomJoueur, DateTime $ddn, Pays $nationalite, string $url, string $portrait)
     {
         $this->_nomJoueur = $nomJoeur;
         $this->_prenomJoueur = $prenomJoueur;
         $this->_ddn = $ddn;
         $this->_nationalite = $nationalite;
+        $this->_url = $url;
+        $this->_portrait = $portrait;
     }
 //____________________________________SETTERS________________________________
-
 	public function set_nomJoueur(string $nomJoueur): self 
     {
 		$this->_nomJoueur = $nomJoueur;
@@ -36,7 +39,16 @@ class Joueur
     {   
         $this->_nationalite = $nationalite;
     }
-
+	public function set_url(string $_url): self 
+    {
+		$this->_url = $_url;
+		return $this;
+	}
+	public function set_portrait(string $_portrait): self 
+    {
+		$this->_portrait = $_portrait;
+		return $this;
+	}
     //__________________________________GETTERS________________
 	public function get_nomJoueur(): string 
     {
@@ -46,16 +58,23 @@ class Joueur
     {
 		return $this->_prenomJoueur;
 	}
-
 	public function get_ddn(): DateTime
     {
 		return $this->_ddn;
 	}
-
     public function get_nationalite() : Pays
     {
         return $this->_nationalite;
     }
+	public function get_url(): string 
+    {
+        return $this->_url;            
+	}
+	public function get_portrait(): string 
+    {
+		return "<img    alt='Portrait". $this->_nomJoueur." '
+                        src='".$this->_portrait. "'/>";
+	}
 //____________________________________METHODES_______________________________________
     public function ajouterSignature(Signature $signature)
     {
@@ -63,32 +82,8 @@ class Joueur
     }
     public function afficherSignatures()
     {
-        if ($this->_nomJoueur == "Mbappé")
-        {
-            $imgjoueur = '<img  alt="Mbappé photo"
-                                src ="Images/mabbéportrait.jpg"/>';
-            $url = 'https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9" target=_blank>';
-        }
-        if ($this->_nomJoueur == "Messi")
-        {
-            $imgjoueur = '<img  alt="Messi photo"
-                                src ="Images/messiportrait.jpg"/>';
-            $url = 'https://fr.wikipedia.org/wiki/Lionel_Messi" target=_blank>';
-        }
-        if ($this->_nomJoueur == "Junior")
-        {
-            $imgjoueur = '<img  alt="Neymar photo"
-                                src ="Images/neymarportrait.jpg"/>';
-            $url = 'https://en.wikipedia.org/wiki/Neymar" target=_blank>';
-        }
-        if ($this->_nomJoueur == "Ronaldo")
-        {
-            $imgjoueur = '<img  alt="Ronaldo photo"
-                                src ="Images/cr7portrait.jpg"/>';
-            $url = 'https://fr.wikipedia.org/wiki/Cristiano_Ronaldo" target=_blank>';
-        }
-        
-        $result = '<a href ="'.$url. $imgjoueur.'</a>';
+
+        $result = '<a href ="'.$this->get_url()." ".$this->get_portrait().'</a>';
         $aujourdhui = (date('d-m-Y'));
         $diff = date_diff(($this->_ddn), date_create($aujourdhui));
         $result .= "Age : ". $diff->format("%Y") ." ans  - ". $this->_nationalite ." <br>"; //Attention au format : Y pour les années à 4 chiffres : voir doc        
